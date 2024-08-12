@@ -3,6 +3,19 @@
 ## Overview
 The Trading Reporting Engine is a Java-based application built with Spring Boot that reads a set of XML event files, extracts specific elements, stores them in a database, filters the events based on a set of criteria, and reports the events in JSON format.
 
+## Design and Implementation
+The application follows a layered architecture with the following key components:
+- **Controller**: Handles HTTP requests and responses.
+- **Service**: Contains business logic for processing trades & parsing data from XML file.
+- **Repository**: Interacts with the database using JPA.
+- **Model**: Represents the data structure of trades and events.
+
+Design patterns used:
+- **Singleton**: Ensures a single instance of the database connection.
+- **Factory**: Creates instances of trade objects based on XML input.
+- **Strategy**: Implements different filtering criteria.
+
+
 ## Features
 - **XML Parsing**: Uses `javax.xml.parsers.DocumentBuilder` and `javax.xml.xpath.XPath` to parse XML files.
 - **Database Storage**: Stores extracted data into a H2 database using JPA.
@@ -64,6 +77,7 @@ The Trading Reporting Engine is a Java-based application built with Spring Boot 
 To run the tests for the project, use the following Maven command:
 ```sh
 mvn test
+```
 
 ## Usage
 1. **Place XML files**: Place your XML event files in the `src/main/resources/events` directory.
@@ -72,4 +86,6 @@ mvn test
     GET /api/trades
     ```
 
-
+## Assumptions and Trade-offs
+- The XML files are well-formed and follow a consistent structure.
+- Trade-offs were made to prioritize simplicity and readability over performance in some areas.
