@@ -9,12 +9,12 @@ The Trading Reporting Engine is a Java-based application built with Spring Boot 
 - **Filtering**: Filters events based on specified criteria.
 - **JSON Reporting**: Reports filtered events in JSON format via an HTTP response.
 - **Extensible Design**: Designed to easily add more filtering criteria without impacting existing filters.
-- **API Documentation**: Uses Swagger for API documentation and testing.
+- **API Documentation**: Uses Swagger for API documentation and testing. htttp://localhost:8080/swagger.html
 
 ## API Details
 - **Find all trades: Provides a pageable list of all trades
 - **Find by Default condition: A default query is configured for quick access
-- **Find by Conditions: Combination of Buyer, Seller, Currency & Amount (EQuals, GREATER_THAN, LESS_THAN). More that one condition can be used to search. Consider following example
+- **Find by Conditions: Combination of Buyer, Seller, Currency & Amount (EQUALS, GREATER_THAN, LESS_THAN). More that one condition can be used to search. Consider following condition to search
 ```
 {
     "conditions": [
@@ -66,13 +66,4 @@ The Trading Reporting Engine is a Java-based application built with Spring Boot 
     GET /api/trades
     ```
 
-## Example XML File
-```xml
-<event>
-    <buyerPartyReference href="BUYER_BANK"/>
-    <sellerPartyReference href="EMU_BANK"/>
-    <paymentAmount>
-        <amount>100.0</amount>
-        <currency>AUD</currency>
-    </paymentAmount>
-</event>
+
