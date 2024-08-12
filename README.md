@@ -59,6 +59,12 @@ The Trading Reporting Engine is a Java-based application built with Spring Boot 
     mvn spring-boot:run
     ```
 
+
+## Running Tests
+To run the tests for the project, use the following Maven command:
+```sh
+mvn test
+
 ## Usage
 1. **Place XML files**: Place your XML event files in the `src/main/resources/events` directory.
 2. **Access the API**: Use the following endpoint to get the filtered events in JSON format:
